@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Warm cream book palette */
+    --background: 0.961 0.018 82;
+    --foreground: 0.155 0.018 45;
+    --card: 0.972 0.014 82;
+    --card-foreground: 0.155 0.018 45;
+    --popover: 0.972 0.014 82;
+    --popover-foreground: 0.155 0.018 45;
+
+    /* Gold primary */
+    --primary: 0.62 0.12 72;
+    --primary-foreground: 0.99 0 0;
+
+    /* Cream secondary */
+    --secondary: 0.938 0.024 82;
+    --secondary-foreground: 0.155 0.018 45;
+
+    --muted: 0.938 0.018 82;
+    --muted-foreground: 0.48 0.032 58;
+
+    /* Gold accent */
+    --accent: 0.62 0.12 72;
+    --accent-foreground: 0.99 0 0;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.84 0.038 72;
+    --input: 0.84 0.038 72;
+    --ring: 0.62 0.12 72;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.938 0.024 82;
+    --sidebar-foreground: 0.155 0.018 45;
+    --sidebar-primary: 0.62 0.12 72;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.92 0.032 78;
+    --sidebar-accent-foreground: 0.155 0.018 45;
+    --sidebar-border: 0.84 0.038 72;
+    --sidebar-ring: 0.62 0.12 72;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "DM Sans", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-playfair {
+    font-family: "Playfair Display", serif;
+  }
+  .font-devanagari {
+    font-family: "Noto Sans Devanagari", "DM Sans", sans-serif;
+  }
+
+  .gold-border {
+    border: 2px solid oklch(0.62 0.12 72);
+  }
+
+  .book-shadow {
+    box-shadow: 8px 8px 0 oklch(0.62 0.12 72 / 0.4), 16px 16px 32px
+      oklch(0.155 0.018 45 / 0.35), -2px -2px 8px oklch(0.99 0 0 / 0.6) inset;
+  }
+
+  .hero-glow {
+    background: radial-gradient(
+      ellipse 80% 60% at 30% 50%,
+      oklch(0.82 0.12 70 / 0.35) 0%,
+      oklch(0.961 0.018 82 / 0) 70%
+    );
+  }
+
+  .ornament-border {
+    border: 3px double oklch(0.62 0.12 72);
+    outline: 1px solid oklch(0.62 0.12 72 / 0.4);
+    outline-offset: 4px;
+  }
+
+  .chapter-active {
+    background: linear-gradient(
+      135deg,
+      oklch(0.62 0.12 72 / 0.18) 0%,
+      oklch(0.62 0.12 72 / 0.06) 100%
+    );
+    border-left: 3px solid oklch(0.62 0.12 72);
+  }
+
+  .saffron-strip {
+    background: linear-gradient(
+      90deg,
+      #ff9933 0%,
+      #ff9933 33.3%,
+      #ffffff 33.3%,
+      #ffffff 66.6%,
+      #138808 66.6%,
+      #138808 100%
+    );
+  }
+}
